@@ -1,0 +1,43 @@
+<!-- views/add-post.ejs -->
+
+<!DOCTYPE HTML>
+<html>
+  <%- include('head') %>
+  <body>
+    <%- include('header') %>
+    <!-- One -->
+    <section id="One" class="wrapper style3">
+      <div class="inner">
+					<header class="align-center"><p>Page to create post</p>
+						<h2>Creation</h2>
+					</header>
+      </div>
+			</section>
+    <!-- Two -->
+    <section id="two" class="wrapper style2"><div class="inner">
+					<div class="box">
+						<div class="content">
+								<form method="post" action="/add-post">
+									<div class="row uniform">
+										<div class="12u$">
+											<input type="text" name="title" id="title" value="" placeholder="Title" required>
+                    </div>
+                  <!-- Break -->
+										<div class="12u$">
+											<textarea name="content" id="content" placeholder="Enter content of the post" rows="6" required></textarea>
+              </div>
+										<!-- Break -->
+										<div class="12u$ align-center">
+											<input type="submit" value="Create post">
+                    </div>
+							    </div>
+					      </form>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+    <%- include('footer') %>
+  </body>
+</html>

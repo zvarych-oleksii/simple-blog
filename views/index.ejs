@@ -1,0 +1,42 @@
+<!-- views/index.ejs -->
+<!DOCTYPE HTML>
+<html>
+  <%- include('head') %>
+  <body>
+    <%- include('header') %>
+
+  <!-- Banner -->
+  <section class="banner full"><article>
+  <img src="slide01.jpg" alt="" width="1440" height="961"><div class="inner">
+						<header><p>My simple blog <a>OLEKSII ZVARYCH</a></p>
+							<h2>Huleo</h2>
+						</header></div>
+				</article>
+  </section>
+
+  <!-- One -->
+    <section id="one" class="wrapper style2">
+      <div class="inner">
+        <div class="grid-style">
+          <% posts.forEach(post => { %>
+            <div>
+              <div class="box">
+                <div class="content">
+                  <header class="align-center">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.author %></p>
+                  </header>
+                  <p><%= post.content %></p>
+                  <footer class="align-center">
+                    <a href="post/<%= post._id %>" class="button alt">Learn More</a>
+                  </footer>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+    <%- include('footer') %>
+  </body>
+</html>

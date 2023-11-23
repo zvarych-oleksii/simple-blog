@@ -1,0 +1,51 @@
+<!-- views/posts.ejs -->
+<!DOCTYPE HTML>
+<html>
+  <%- include('head') %>
+  <body>
+    <%- include('header') %>
+    <!-- Banner -->
+    <section class="banner full">
+      <article>
+        <img src="slide01.jpg" alt="" width="1440" height="961">
+        <div class="inner">
+          <header>
+            <p>All posts<a>OLEKSII ZVARYCH</a></p>
+            <h2>Posts</h2>
+          </header>
+        </div>
+      </article>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="wrapper style2">
+      <div class="inner">
+        <div class="grid-style">
+          <% posts.forEach(post => { %>
+            <div>
+              <div class="box">
+                <div class="content">
+                  <header class="align-center">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.author %></p>
+                  </header>
+                  <p><%= post.content %></p>
+                  <footer class="align-center">
+                    <a href="post/<%= post._id %>" class="button alt">Learn More</a>
+                    <% if (user && post.author === user.username) { %>
+                      <!-- Show edit and delete buttons only if the user is the author -->
+                      <a href="edit-post/<%= post._id %>" class="button alt">Edit</a>
+                      <a href="delete-post/<%= post._id %>" action='POST' class="button alt">Delete</a>
+                    <% } %>
+                  </footer>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <%- include('footer') %>
+  </body>
+</html>
