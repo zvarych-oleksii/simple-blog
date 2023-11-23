@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use(express.static(path.join(__dirname, 'images')));
 
-mongoose.connect("mongodb://localhost:27017/simple-blog", {
+mongoose.connect("mongodb+srv://admin:admin@simple-blog.vzqdc9f.mongodb.net/", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -25,7 +25,7 @@ const createPath = (page) => path.join(__dirname, "views", `${page}.ejs`);
 
 // Session setup
 app.use(session({
-  secret: "your-secret-key",
+  secret: "secret-key",
   resave: false,
   saveUninitialized: false
 }));
