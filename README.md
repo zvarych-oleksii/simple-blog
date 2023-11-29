@@ -1,5 +1,5 @@
 # Simple-blog
-
+Use PowerShell or Linux terminal
 ## Installation
 
 Copy project from git
