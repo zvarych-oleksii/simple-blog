@@ -11,12 +11,23 @@ Go to new folder
 ```sh
 cd simple-blog
 ```
+## Set up and run project
 
-## Set up project 
+# Set up with docker:
+Set up docker container
 ```sh
-npm install --save
+docker-compose build
 ```
-## Run project 
+Start docker-compose 
+```sh
+docker-compose up
+```
+# Set up without docker:
+Install dependencies
+```sh
+npm install
+```
+Run project
 ```sh
 nodemon app.js
 ```
